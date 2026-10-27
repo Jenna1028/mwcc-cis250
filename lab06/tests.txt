@@ -1,0 +1,8 @@
+date
+
+#skip this comment
+ls -l
+invalid_test_program
+df -h
+ps -eo pid,ppid,comm
+pwd

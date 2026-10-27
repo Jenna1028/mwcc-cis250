@@ -1,0 +1,49 @@
+Lab06 - Questions
+Jenna Bonenfant 
+
+Question 1: 
+
+The test runner uses fgets() because it allows the program to read tests.txt one line at a time. This is useful
+because each line contains a seperate test command and it also limits how many characters are read at once. 
+
+Question 2: 
+
+Each command must be parsed into an argument array because execvp() needs the command name and its arguments to be
+seperated. This allows the program to correctly execute commands that contain multiple parts.
+
+Question 3: 
+
+fork() can return three different values. A negative valye means the process could not be created. A value of 0 
+means the code is running in the child process. A positive value means the code is running in the parent process
+and the value represents the child process's ID. 
+
+Question 4: 
+
+When execvp() succeds, it replaces the child process's current program with the new command that's being executed.
+The child process runs the new program instead of continuing it with the original code, and then terminates the 
+child process once the command finishes. 
+
+Question 5: 
+
+The parent must call wait() to make sure that the current child process finishes before starting the next test. This
+makes sure that the tests run one at a time and in teh correct order, and also allows the parent to collect the 
+childs status to determine whether the test passed or failed
+
+Question 6:
+
+The test runner uses the childs exit status to determine whether a test past or failed. If the child process terminates
+normally with an exit status of 0, the test passes and if it returns a nonzero exit status or terminates abnormally,
+then it fails. 
+
+Question 7:
+
+If a test program cannot be executed, then the test runnr should display an error message and mark the test as failed.
+the runner should then continue executing the remaining tests because one failed test should not prevent the others from 
+running. This allows the program to complete the test plan and give an accurate summary.
+
+Question 8:  
+
+If the parent launched all tests without waiting, then multiple tests could run at the same time causing their outputs to
+get mixed together and making it difficylt to tell which results belong to which. They can also interfere with each other 
+if they are using the same files or resources. Waiting amkes sure that each tests finishes before the next one begins,
+making the results more reliable.

@@ -1,0 +1,27 @@
+Lab06 - Test Runner Observations
+Jenna Bonenfant 
+
+Experiment 1 - Normal Execution:
+
+The test runner correctly read tests.txt and executed all five commands in the right order. Each command displayed its output 
+with a pass result, showing a final summary of 5 tests, 5 passes, and 0 fails.
+
+Experiment 2 - Test Plan Comments:
+
+After adding a blank line follwed by a comment beginning with #, the program properly skipped both and executed only the five 
+test commands. The summary also still showed 5 tests, 5 passed, 0 failed.
+
+Experiment 3 - Failed test:
+
+I added invalid_test_program to the middle of tests.txt, and the program rpeorted an execution error, marking the test as a 
+fail. It continued to execute the rest of the program succesfull, giving a final summary of 6 tests, 5 passed, 1 failed.
+
+Experiment 4 - Reorder Tests:
+
+I moved date to the beggining and pwd to the end, and test runner properly executed the commands in this new order. the invalid 
+command still failed without interrupting the remaining tests. The summary showed 6 tests, 5 passed, 1 failed.
+
+Experiment 5 - Missing Test Plan:
+
+After renaming texts.txt, the program displayed an error saying that tests.txt could not be opened because the file did not
+exist and then was terminated without executing any tests.
